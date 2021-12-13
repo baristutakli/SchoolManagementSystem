@@ -42,9 +42,11 @@ namespace MainForm
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.grpBox = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,12 +77,14 @@ namespace MainForm
             this.displayAllStudentsToolStripMenuItem.Name = "displayAllStudentsToolStripMenuItem";
             this.displayAllStudentsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.displayAllStudentsToolStripMenuItem.Text = "Display All students";
+            this.displayAllStudentsToolStripMenuItem.Click += new System.EventHandler(this.displayAllStudentsToolStripMenuItem_Click);
             // 
             // registerNewStudentsToolStripMenuItem
             // 
             this.registerNewStudentsToolStripMenuItem.Name = "registerNewStudentsToolStripMenuItem";
             this.registerNewStudentsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.registerNewStudentsToolStripMenuItem.Text = "Register new students";
+            this.registerNewStudentsToolStripMenuItem.Click += new System.EventHandler(this.registerNewStudentsToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -110,6 +114,7 @@ namespace MainForm
             this.displayAllİnstructorToolStripMenuItem.Name = "displayAllİnstructorToolStripMenuItem";
             this.displayAllİnstructorToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.displayAllİnstructorToolStripMenuItem.Text = "Display all instructor";
+            this.displayAllİnstructorToolStripMenuItem.Click += new System.EventHandler(this.displayAllİnstructorToolStripMenuItem_Click);
             // 
             // registerNewİnstructorsToolStripMenuItem
             // 
@@ -144,6 +149,7 @@ namespace MainForm
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AccessibleName = "Panel2";
+            this.splitContainer1.Panel2.Controls.Add(this.grpBox);
             this.splitContainer1.Size = new System.Drawing.Size(800, 426);
             this.splitContainer1.SplitterDistance = 40;
             this.splitContainer1.TabIndex = 1;
@@ -159,6 +165,16 @@ namespace MainForm
             this.labelTitle.Text = "Welcome";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // grpBox
+            // 
+            this.grpBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpBox.Location = new System.Drawing.Point(0, 0);
+            this.grpBox.Name = "grpBox";
+            this.grpBox.Size = new System.Drawing.Size(800, 382);
+            this.grpBox.TabIndex = 0;
+            this.grpBox.TabStop = false;
+            this.grpBox.Text = "DetailBox";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -169,9 +185,11 @@ namespace MainForm
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "School Management System";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -194,6 +212,7 @@ namespace MainForm
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox grpBox;
     }
 }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xUlv0fxqTO0OWFUwM+N767tLKuFCehTLMKnZ2VUC6tdrdcqwrnPrQNtb72iGKWORqV6Nz6wWm+U7mnWEPsfz7g==",
+  "dgSpecHash": "2m76jqkXE+nLuxbnS5HlYm3PWP+1vJiKCHEPKlrb/XJb2f+CDuXVz1OIC0TU2ULljtZDQGyyVbBkzhK2zXZaMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kbez1\\source\\repos\\SchoolManagementSystem\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\kbez1\\Documents\\kodlar\\SchoolManagementSystem\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kbez1\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\kbez1\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

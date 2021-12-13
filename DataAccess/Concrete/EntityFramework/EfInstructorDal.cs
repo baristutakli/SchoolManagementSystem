@@ -42,7 +42,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public List<Instructor> GetAll(Expression<Func<Instructor, bool>> filter = null)
         {
-            using (SchoolContext context =new SchoolContext())
+            using (SchoolContext context = new SchoolContext())
             {
                 return filter == null ? context.Set<Instructor>().ToList() :
                      context.Set<Instructor>().Where(filter).ToList();
