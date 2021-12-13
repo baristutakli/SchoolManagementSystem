@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace MainForm
         InstructorManager ınstructorManager;
         StudentManager studentManager;
         DataGridView dt;
+        ComboBox cmbBox;
         public MainForm()
         {
             InitializeComponent();
@@ -79,6 +81,14 @@ namespace MainForm
         private void registerNewStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dt.Visible = false;
+            LabelGenerator();
+           
+
+  
+        }
+
+        private void  LabelGenerator(int id=-1)
+        {
             Point Lpoint = new Point();
             Lpoint.X = 20;
             Lpoint.Y = 20;
@@ -86,20 +96,59 @@ namespace MainForm
             Point Tpoint = new Point();
             Tpoint.X = Lpoint.X + 100;
             Tpoint.Y = 20;
-
-            for (int i = 0; i < dt.Columns.Count; i++)
+            if (id == -1)
             {
-                grpBox.Controls.AddRange(new Control[] { new Label { Text = $"{dt.Columns[i].HeaderText} :", Location = Lpoint }, new TextBox { Location = Tpoint } }  );
-                Lpoint.X = 20;
-                Lpoint.Y += 40;
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    grpBox.Controls.AddRange(new Control[] { new Label { Text = $"{dt.Columns[i].HeaderText} :", Location = Lpoint }, new TextBox { Location = Tpoint } });
+                    Lpoint.X = 20;
+                    Lpoint.Y += 40;
 
-                Tpoint.X = Lpoint.X + 100;
-                Tpoint.Y += 40;
+                    Tpoint.X = Lpoint.X + 100;
+                    Tpoint.Y += 40;
 
+                }
             }
-           
+            else
+            {
+                List<string> liste; 
+                Student selectedStudent = studentManager.Get(2);
+                liste = new List<string>(){selectedStudent.ID.ToString(), selectedStudent.FirstName, selectedStudent.LastName,
+                    selectedStudent.Tel, selectedStudent.NationaltyId, selectedStudent.GNO.ToString() };
+                for (int i = 0; i < dt.Columns.Count-1; i++)
+                {
+                    Lpoint.X = 100;
+                    Lpoint.Y += 40;
 
-  
+                    Tpoint.X = Lpoint.X + 100;
+                    Tpoint.Y += 40;
+                    grpBox.Controls.AddRange(new Control[] { new Label { Text = $"{dt.Columns[i].HeaderText} :", Location = Lpoint }, new TextBox {Text=liste[i], Location = Tpoint } });
+
+
+                }
+                
+            }
+            
         }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Control  item in grpBox.Controls)
+            {
+                item.Visible = false;
+            }
+
+            cmbBox = new ComboBox();
+            
+            cmbBox.DataSource = studentManager.GetAll();
+            
+            cmbBox.DisplayMember = "FirstName";
+            cmbBox.ValueMember = "ID";
+            
+            grpBox.Controls.Add(cmbBox);
+            LabelGenerator(cmbBox.SelectedIndex);
+
+        }
+        
     }
 }

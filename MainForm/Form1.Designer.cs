@@ -91,6 +91,7 @@ namespace MainForm
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.updateToolStripMenuItem.Text = "Update ";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem1
             // 

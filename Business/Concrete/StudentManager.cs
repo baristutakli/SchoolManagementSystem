@@ -32,5 +32,9 @@ namespace Business.Concrete
         {
             return _StudentDal.GetAll(s => s.GNO >= min && s.GNO <= max);
         }
+        public Student Get(short id)
+        {
+            return _StudentDal.Get(s => s.ID==id);
+        }
     }
 }
