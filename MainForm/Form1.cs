@@ -28,37 +28,25 @@ namespace MainForm
 
         private void filterByToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Hangi işlem yapılacaksa o işleme göre labeltitle değişecek
-            // Hangi işlem isteniyorsa panel2 ona göre değişecek
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
              ınstructorManager = new InstructorManager(new EfInstructorDal());
              studentManager = new StudentManager(new EfStudentDal());
-
+                
             dt = new DataGridView();
+            dt.DataSource = studentManager.GetAll();
             dt.Visible = false;
            
-            //Point position = new Point();
-            //position.X = 110;
-            //position.Y = 50;
-            //foreach (var item in studentManager.GetAll())
-            //{
-            //    grpBox.Controls.Add(new Label { Text = item.FirstName + " " + item.LastName,Location =position });
-              
-            //    position.X += 20;
-            //    position.Y += 20;
-
-            //}
-            
-            
         }
 
         private void displayAllStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dt.Visible = true;
-            dt.DataSource = studentManager.GetAll();
+            
+            // dt.DataSource = studentManager.GetAll();
             dt.Dock = DockStyle.Fill;
             dt.ReadOnly = true;
             grpBox.Controls.Add(dt);
@@ -70,6 +58,7 @@ namespace MainForm
         {
 
             dt.Visible = true;
+            
             dt.DataSource = ınstructorManager.GetAll();
             dt.Dock = DockStyle.Fill;
             dt.ReadOnly = true;
@@ -81,6 +70,7 @@ namespace MainForm
         private void registerNewStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dt.Visible = false;
+            ClearItemsFromGroupBox();
             LabelGenerator();
            
 
@@ -89,6 +79,7 @@ namespace MainForm
 
         private void  LabelGenerator(int id=-1)
         {
+            
             Point Lpoint = new Point();
             Lpoint.X = 20;
             Lpoint.Y = 20;
@@ -131,12 +122,17 @@ namespace MainForm
             
         }
 
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClearItemsFromGroupBox()
         {
-            foreach (Control  item in grpBox.Controls)
+            foreach (Control item in grpBox.Controls)
             {
                 item.Visible = false;
             }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearItemsFromGroupBox();
 
             cmbBox = new ComboBox();
             

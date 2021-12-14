@@ -157,7 +157,7 @@ namespace MainForm
             // 
             // labelTitle
             // 
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
