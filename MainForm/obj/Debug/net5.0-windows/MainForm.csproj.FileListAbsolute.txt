@@ -78,3 +78,5 @@ C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\obj\Debug\net5.0
 C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\obj\Debug\net5.0-windows\ref\MainForm.dll
 C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\obj\Debug\net5.0-windows\MainForm.pdb
 C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\obj\Debug\net5.0-windows\MainForm.genruntimeconfig.cache
+C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\bin\Debug\net5.0-windows\Core.dll
+C:\Users\kbez1\Documents\kodlar\SchoolManagementSystem\MainForm\bin\Debug\net5.0-windows\Core.pdb
